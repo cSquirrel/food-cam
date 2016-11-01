@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		324DA3BF1DC953AE005EB950 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3BE1DC953AE005EB950 /* MobileCoreServices.framework */; };
 		32CD34661DC8FDCB000501B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD34651DC8FDCB000501B6 /* AppDelegate.swift */; };
 		32CD34681DC8FDCB000501B6 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD34671DC8FDCB000501B6 /* FirstViewController.swift */; };
 		32CD346A1DC8FDCB000501B6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD34691DC8FDCB000501B6 /* SecondViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		324DA3BE1DC953AE005EB950 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		32CD34621DC8FDCB000501B6 /* FoodCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32CD34651DC8FDCB000501B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32CD34671DC8FDCB000501B6 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				324DA3BF1DC953AE005EB950 /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		324DA3BD1DC953AE005EB950 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				324DA3BE1DC953AE005EB950 /* MobileCoreServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		32CD34591DC8FDCB000501B6 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +94,7 @@
 				32CD347B1DC8FDCB000501B6 /* FoodCamTests */,
 				32CD34861DC8FDCB000501B6 /* FoodCamUITests */,
 				32CD34631DC8FDCB000501B6 /* Products */,
+				324DA3BD1DC953AE005EB950 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -518,6 +530,7 @@
 				32CD348E1DC8FDCB000501B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		32CD348F1DC8FDCB000501B6 /* Build configuration list for PBXNativeTarget "FoodCamTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +539,7 @@
 				32CD34911DC8FDCB000501B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		32CD34921DC8FDCB000501B6 /* Build configuration list for PBXNativeTarget "FoodCamUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +548,7 @@
 				32CD34941DC8FDCB000501B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
