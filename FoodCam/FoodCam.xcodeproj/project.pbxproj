@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		324DA3BF1DC953AE005EB950 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3BE1DC953AE005EB950 /* MobileCoreServices.framework */; };
+		324DA3C21DC95B9B005EB950 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C11DC95B9B005EB950 /* CloudKit.framework */; };
 		32CD34661DC8FDCB000501B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD34651DC8FDCB000501B6 /* AppDelegate.swift */; };
 		32CD34681DC8FDCB000501B6 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD34671DC8FDCB000501B6 /* FirstViewController.swift */; };
 		32CD346A1DC8FDCB000501B6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD34691DC8FDCB000501B6 /* SecondViewController.swift */; };
@@ -37,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		324DA3BE1DC953AE005EB950 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		324DA3C01DC95B98005EB950 /* FoodCam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodCam.entitlements; sourceTree = "<group>"; };
+		324DA3C11DC95B9B005EB950 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		32CD34621DC8FDCB000501B6 /* FoodCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32CD34651DC8FDCB000501B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32CD34671DC8FDCB000501B6 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				324DA3BF1DC953AE005EB950 /* MobileCoreServices.framework in Frameworks */,
+				324DA3C21DC95B9B005EB950 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +86,7 @@
 		324DA3BD1DC953AE005EB950 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				324DA3C11DC95B9B005EB950 /* CloudKit.framework */,
 				324DA3BE1DC953AE005EB950 /* MobileCoreServices.framework */,
 			);
 			name = Frameworks;
@@ -111,6 +116,7 @@
 		32CD34641DC8FDCB000501B6 /* FoodCam */ = {
 			isa = PBXGroup;
 			children = (
+				324DA3C01DC95B98005EB950 /* FoodCam.entitlements */,
 				32CD34651DC8FDCB000501B6 /* AppDelegate.swift */,
 				32CD34671DC8FDCB000501B6 /* FirstViewController.swift */,
 				32CD34691DC8FDCB000501B6 /* SecondViewController.swift */,
@@ -210,6 +216,14 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = FXYZH4KYS4;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					32CD34771DC8FDCB000501B6 = {
 						CreatedOnToolsVersion = 8.1;
@@ -431,6 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FoodCam/FoodCam.entitlements;
 				DEVELOPMENT_TEAM = FXYZH4KYS4;
 				INFOPLIST_FILE = FoodCam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -444,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FoodCam/FoodCam.entitlements;
 				DEVELOPMENT_TEAM = FXYZH4KYS4;
 				INFOPLIST_FILE = FoodCam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
