@@ -15,9 +15,12 @@
 		324DA3C91DCA027E005EB950 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C61DCA0197005EB950 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		324DA3CA1DCA027E005EB950 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C31DCA014F005EB950 /* RealmSwift.framework */; };
 		324DA3CB1DCA027E005EB950 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C31DCA014F005EB950 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		324DA3D21DCA0310005EB950 /* FoodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DA3D11DCA0310005EB950 /* FoodEntry.swift */; };
+		324DA3D41DCA03BC005EB950 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DA3D31DCA03BC005EB950 /* DataSource.swift */; };
+		325754201DCB927600FF0935 /* NewEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3257541E1DCB927600FF0935 /* NewEntryViewController.swift */; };
+		32CA18031DCBE85C008A337A /* ExistingEntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA18011DCBE85C008A337A /* ExistingEntriesViewController.swift */; };
+		32CA18071DCBEB96008A337A /* EntryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA18051DCBEB96008A337A /* EntryDetailsViewController.swift */; };
 		32CD34661DC8FDCB000501B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD34651DC8FDCB000501B6 /* AppDelegate.swift */; };
-		32CD34681DC8FDCB000501B6 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD34671DC8FDCB000501B6 /* FirstViewController.swift */; };
-		32CD346A1DC8FDCB000501B6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD34691DC8FDCB000501B6 /* SecondViewController.swift */; };
 		32CD346D1DC8FDCB000501B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32CD346B1DC8FDCB000501B6 /* Main.storyboard */; };
 		32CD346F1DC8FDCB000501B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32CD346E1DC8FDCB000501B6 /* Assets.xcassets */; };
 		32CD34721DC8FDCB000501B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32CD34701DC8FDCB000501B6 /* LaunchScreen.storyboard */; };
@@ -63,10 +66,13 @@
 		324DA3C11DC95B9B005EB950 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		324DA3C31DCA014F005EB950 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		324DA3C61DCA0197005EB950 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		324DA3D11DCA0310005EB950 /* FoodEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodEntry.swift; sourceTree = "<group>"; };
+		324DA3D31DCA03BC005EB950 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		3257541E1DCB927600FF0935 /* NewEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEntryViewController.swift; sourceTree = "<group>"; };
+		32CA18011DCBE85C008A337A /* ExistingEntriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingEntriesViewController.swift; sourceTree = "<group>"; };
+		32CA18051DCBEB96008A337A /* EntryDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryDetailsViewController.swift; sourceTree = "<group>"; };
 		32CD34621DC8FDCB000501B6 /* FoodCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32CD34651DC8FDCB000501B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		32CD34671DC8FDCB000501B6 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		32CD34691DC8FDCB000501B6 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		32CD346C1DC8FDCB000501B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32CD346E1DC8FDCB000501B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32CD34711DC8FDCB000501B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -121,6 +127,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		324DA3D01DCA02FF005EB950 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				324DA3D11DCA0310005EB950 /* FoodEntry.swift */,
+				324DA3D31DCA03BC005EB950 /* DataSource.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		32CD34591DC8FDCB000501B6 = {
 			isa = PBXGroup;
 			children = (
@@ -145,14 +160,16 @@
 		32CD34641DC8FDCB000501B6 /* FoodCam */ = {
 			isa = PBXGroup;
 			children = (
+				324DA3D01DCA02FF005EB950 /* Model */,
 				324DA3C01DC95B98005EB950 /* FoodCam.entitlements */,
 				32CD34651DC8FDCB000501B6 /* AppDelegate.swift */,
-				32CD34671DC8FDCB000501B6 /* FirstViewController.swift */,
-				32CD34691DC8FDCB000501B6 /* SecondViewController.swift */,
 				32CD346B1DC8FDCB000501B6 /* Main.storyboard */,
 				32CD346E1DC8FDCB000501B6 /* Assets.xcassets */,
 				32CD34701DC8FDCB000501B6 /* LaunchScreen.storyboard */,
 				32CD34731DC8FDCB000501B6 /* Info.plist */,
+				3257541E1DCB927600FF0935 /* NewEntryViewController.swift */,
+				32CA18011DCBE85C008A337A /* ExistingEntriesViewController.swift */,
+				32CA18051DCBEB96008A337A /* EntryDetailsViewController.swift */,
 			);
 			path = FoodCam;
 			sourceTree = "<group>";
@@ -338,9 +355,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32CD346A1DC8FDCB000501B6 /* SecondViewController.swift in Sources */,
+				32CA18031DCBE85C008A337A /* ExistingEntriesViewController.swift in Sources */,
+				324DA3D21DCA0310005EB950 /* FoodEntry.swift in Sources */,
 				32CD34661DC8FDCB000501B6 /* AppDelegate.swift in Sources */,
-				32CD34681DC8FDCB000501B6 /* FirstViewController.swift in Sources */,
+				32CA18071DCBEB96008A337A /* EntryDetailsViewController.swift in Sources */,
+				324DA3D41DCA03BC005EB950 /* DataSource.swift in Sources */,
+				325754201DCB927600FF0935 /* NewEntryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
