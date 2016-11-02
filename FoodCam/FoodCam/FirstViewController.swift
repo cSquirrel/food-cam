@@ -8,6 +8,7 @@
 
 import UIKit
 import MobileCoreServices
+import CloudKit
 
 class FirstViewController: UIViewController {
 
@@ -54,7 +55,94 @@ class FirstViewController: UIViewController {
     
     @IBAction func doSave(_ sender: Any) {
         
+        guard let img = selectedImage else {
+            return
+        }
+        
         // save the image and the description
+        let privateDB = CKContainer.default().privateCloudDatabase
+        let zoneID = CKRecordZoneID(zoneName: "FoodEntries", ownerName: CKCurrentUserDefaultName)
+        let zone = CKRecordZone(zoneID: zoneID)
+        privateDB.save(zone, completionHandler: {
+            (zone: CKRecordZone?, error: Error?) in
+            if let e = error {
+                print(e)
+            } else {
+                DispatchQueue.main.async {
+                    self.saveFoodEntry(database: privateDB, zoneID: zoneID, image: img)
+                }
+            }
+        })
+    }
+    
+    private func saveFoodEntry(database: CKDatabase, zoneID: CKRecordZoneID, image: UIImage) {
+
+        let foodEntry = CKRecord(recordType: "FoodEntry", zoneID: zoneID)
+        
+        
+        do {
+            let filename = ProcessInfo.processInfo.globallyUniqueString + ".jpg"
+            let tempURL = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(filename)!
+            
+            if let data = UIImageJPEGRepresentation(image, 0.8) as NSData? {
+                try data.write(to: tempURL, options: NSData.WritingOptions.atomicWrite)
+            } else {
+                return
+            }
+            let asset = CKAsset(fileURL: tempURL)
+            foodEntry["image"] = asset
+        } catch {
+            print("Error writing data", error)
+            return
+        }
+        
+        foodEntry["customDescription"] = customDescription.text as NSString?
+        foodEntry["createdAt"] = NSDate()
+        
+        DispatchQueue.main.async {
+            database.save(foodEntry, completionHandler: {
+                (record:CKRecord?, error:Error?) in
+                if let e = error {
+                    print(e)
+                } else {
+                    DispatchQueue.main.async { self.queryData() }
+                }
+            })
+        }
+        
+    }
+    
+    private func queryData() {
+        
+        let privateDB = CKContainer.default().privateCloudDatabase
+        let zoneID = CKRecordZoneID(zoneName: "FoodEntries", ownerName: CKCurrentUserDefaultName)
+        privateDB.fetch(withRecordZoneID: zoneID) {
+            (recordZone: CKRecordZone?, error: Error?) in
+            if let e = error {
+                print(e)
+            } else {
+                let allAcceptedPredicate = NSPredicate(value: true)
+                let query = CKQuery(recordType: "FoodEntry", predicate: allAcceptedPredicate)
+                privateDB.perform(query, inZoneWith: zoneID, completionHandler: {
+                    (records:[CKRecord]?, error: Error?) in
+                    if let e = error {
+                        print(e)
+                    } else {
+                        self.printRecords(records: records)
+                    }
+                })
+            }
+        }
+    }
+    
+    private func printRecords(records: [CKRecord]?) {
+        
+        records?.forEach({
+            
+            (record: CKRecord) in
+            print("\(record["createdAt"]): \(record["customDescription"])")
+            
+        })
     }
     
     fileprivate func validate() {

@@ -92,7 +92,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Add" image="first" id="acW-dT-cKf"/>
                     <connections>
-                        <outlet property="description" destination="m8R-3a-ZS0" id="yEJ-dn-9S8"/>
+                        <outlet property="customDescription" destination="m8R-3a-ZS0" id="DTI-5t-dx2"/>
                         <outlet property="imagePreview" destination="zT7-K0-ZjW" id="HLJ-0p-rtk"/>
                         <outlet property="saveButton" destination="OpJ-b5-sYn" id="WWb-jg-JZ4"/>
                     </connections>
