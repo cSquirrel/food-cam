@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		324DA3BF1DC953AE005EB950 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3BE1DC953AE005EB950 /* MobileCoreServices.framework */; };
 		324DA3C21DC95B9B005EB950 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C11DC95B9B005EB950 /* CloudKit.framework */; };
+		324DA3C41DCA014F005EB950 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C31DCA014F005EB950 /* RealmSwift.framework */; };
+		324DA3C71DCA0197005EB950 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C61DCA0197005EB950 /* Realm.framework */; };
+		324DA3C81DCA027E005EB950 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C61DCA0197005EB950 /* Realm.framework */; };
+		324DA3C91DCA027E005EB950 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C61DCA0197005EB950 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		324DA3CA1DCA027E005EB950 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C31DCA014F005EB950 /* RealmSwift.framework */; };
+		324DA3CB1DCA027E005EB950 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C31DCA014F005EB950 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		32CD34661DC8FDCB000501B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD34651DC8FDCB000501B6 /* AppDelegate.swift */; };
 		32CD34681DC8FDCB000501B6 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD34671DC8FDCB000501B6 /* FirstViewController.swift */; };
 		32CD346A1DC8FDCB000501B6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD34691DC8FDCB000501B6 /* SecondViewController.swift */; };
@@ -36,10 +42,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		324DA3CC1DCA027E005EB950 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				324DA3CB1DCA027E005EB950 /* RealmSwift.framework in Embed Frameworks */,
+				324DA3C91DCA027E005EB950 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		324DA3BE1DC953AE005EB950 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		324DA3C01DC95B98005EB950 /* FoodCam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodCam.entitlements; sourceTree = "<group>"; };
 		324DA3C11DC95B9B005EB950 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		324DA3C31DCA014F005EB950 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		324DA3C61DCA0197005EB950 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		32CD34621DC8FDCB000501B6 /* FoodCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32CD34651DC8FDCB000501B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32CD34671DC8FDCB000501B6 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -61,8 +84,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				324DA3C71DCA0197005EB950 /* Realm.framework in Frameworks */,
 				324DA3BF1DC953AE005EB950 /* MobileCoreServices.framework in Frameworks */,
+				324DA3CA1DCA027E005EB950 /* RealmSwift.framework in Frameworks */,
 				324DA3C21DC95B9B005EB950 /* CloudKit.framework in Frameworks */,
+				324DA3C41DCA014F005EB950 /* RealmSwift.framework in Frameworks */,
+				324DA3C81DCA027E005EB950 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +113,8 @@
 		324DA3BD1DC953AE005EB950 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				324DA3C61DCA0197005EB950 /* Realm.framework */,
+				324DA3C31DCA014F005EB950 /* RealmSwift.framework */,
 				324DA3C11DC95B9B005EB950 /* CloudKit.framework */,
 				324DA3BE1DC953AE005EB950 /* MobileCoreServices.framework */,
 			);
@@ -156,6 +185,8 @@
 				32CD345E1DC8FDCB000501B6 /* Sources */,
 				32CD345F1DC8FDCB000501B6 /* Frameworks */,
 				32CD34601DC8FDCB000501B6 /* Resources */,
+				324DA3CC1DCA027E005EB950 /* Embed Frameworks */,
+				324DA3CD1DCA0295005EB950 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -285,6 +316,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		324DA3CD1DCA0295005EB950 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${SOURCE_ROOT}/Realm.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		32CD345E1DC8FDCB000501B6 /* Sources */ = {
@@ -447,6 +494,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FoodCam/FoodCam.entitlements;
 				DEVELOPMENT_TEAM = FXYZH4KYS4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FoodCam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.csquirrel.FoodCam;
@@ -461,6 +512,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FoodCam/FoodCam.entitlements;
 				DEVELOPMENT_TEAM = FXYZH4KYS4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FoodCam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.csquirrel.FoodCam;

@@ -9,6 +9,7 @@
 import UIKit
 import MobileCoreServices
 import CloudKit
+import RealmSwift
 
 class FirstViewController: UIViewController {
 
@@ -55,6 +56,9 @@ class FirstViewController: UIViewController {
     
     @IBAction func doSave(_ sender: Any) {
         
+    }
+    
+    private func syncCloudKit() {
         guard let img = selectedImage else {
             return
         }
