@@ -33,6 +33,11 @@ class ExistingEntriesViewController: UIViewController {
         entries = DataSource().findAllFoodEntries()
         tableView.reloadData()
     }
+    
+    @IBAction func doEditEntry(_ sender: Any) {
+        print("doEditEntry")
+    }
+    
 
     /*
     // MARK: - Navigation

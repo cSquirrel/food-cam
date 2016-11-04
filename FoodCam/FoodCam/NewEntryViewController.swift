@@ -68,13 +68,14 @@ class NewEntryViewController: UIViewController {
 
     @IBAction func doSave(_ sender: Any) {
 
+        let dataSource = DataSource()
         let foodEntry = entry ?? FoodEntry()
         try! foodEntry.update {
-            foodEntry.image = selectedImage
-            foodEntry.customDescription = customDescription.text
+            foodEntry.image = self.selectedImage
+            foodEntry.customDescription = self.customDescription.text
         }
-        DataSource().save(foodEntry: foodEntry)
-        navigationController?.popViewController(animated: true)
+        dataSource.save(foodEntry: foodEntry)
+        _ = navigationController?.popViewController(animated: true)
     }
 
     fileprivate func validate() {

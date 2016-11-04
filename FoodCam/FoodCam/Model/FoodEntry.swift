@@ -46,13 +46,21 @@ class FoodEntry: Object {
 extension FoodEntry {
 
     @discardableResult func update(block: () -> Void) throws -> FoodEntry {
-        try self.realm?.write {
+        
+        if let r = realm {
+            try r.write {
+                block()
+            }
+        } else {
             block()
         }
+        
+        try save()
+        
         return self
     }
     
-    func save() throws {
+    private func save() throws {
         try self.realm?.write {
             realm?.add(self)
         }
