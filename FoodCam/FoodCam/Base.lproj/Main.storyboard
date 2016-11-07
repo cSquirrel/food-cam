@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FJ3-A0-bS1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FJ3-A0-bS1">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,14 +23,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SgS-6d-xaY">
-                                <rect key="frame" x="16" y="64" width="288" height="288"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="SgS-6d-xaY">
+                                <rect key="frame" x="16" y="69" width="288" height="288"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="SgS-6d-xaY" secondAttribute="height" multiplier="1:1" id="8Fn-z3-aBc"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="248-Pv-VaP">
-                                <rect key="frame" x="16" y="489" width="129" height="30"/>
+                                <rect key="frame" x="16" y="533" width="129" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="CHH-Tl-WXa"/>
                                 </constraints>
@@ -40,14 +40,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2c-gI-0bT">
-                                <rect key="frame" x="175" y="489" width="129" height="30"/>
+                                <rect key="frame" x="175" y="533" width="129" height="30"/>
                                 <state key="normal" title="Snap Photo"/>
                                 <connections>
                                     <action selector="doSnapPhoto:" destination="9pv-A4-QxB" eventType="touchUpInside" id="yEA-RO-0AK"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XhO-3y-TkS">
-                                <rect key="frame" x="16" y="362" width="288" height="117"/>
+                                <rect key="frame" x="16" y="367" width="288" height="156"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="scO-0V-2Re"/>
@@ -63,9 +63,9 @@
                             <constraint firstItem="XhO-3y-TkS" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="3jN-r5-2YX"/>
                             <constraint firstItem="U2c-gI-0bT" firstAttribute="top" secondItem="248-Pv-VaP" secondAttribute="top" id="5fe-YC-1qF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XhO-3y-TkS" secondAttribute="trailing" id="5k7-R1-rWL"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="248-Pv-VaP" secondAttribute="bottom" id="KFG-dw-Knc"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="248-Pv-VaP" secondAttribute="bottom" constant="5" id="KFG-dw-Knc"/>
                             <constraint firstItem="U2c-gI-0bT" firstAttribute="width" secondItem="248-Pv-VaP" secondAttribute="width" id="OEh-EC-Rnv"/>
-                            <constraint firstItem="SgS-6d-xaY" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="ZGt-dP-Cm3"/>
+                            <constraint firstItem="SgS-6d-xaY" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="5" id="ZGt-dP-Cm3"/>
                             <constraint firstItem="SgS-6d-xaY" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="cpl-cs-4Rv"/>
                             <constraint firstItem="248-Pv-VaP" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="hXB-aC-SW8"/>
                             <constraint firstItem="248-Pv-VaP" firstAttribute="top" secondItem="XhO-3y-TkS" secondAttribute="bottom" constant="10" id="ils-Lj-4pX"/>
@@ -112,7 +112,7 @@
                                         <rect key="frame" x="0.0" y="28" width="288" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6rb-ON-YrN" id="vsQ-rU-48b">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <gestureRecognizers/>
@@ -180,6 +180,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="photo_placeholder" width="300" height="300"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>

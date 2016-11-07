@@ -51,6 +51,7 @@ class ExistingEntriesViewController: UIViewController {
 
 }
 
+// MARK: - UITableViewDelegate
 extension ExistingEntriesViewController: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -66,6 +67,7 @@ extension ExistingEntriesViewController: UITableViewDelegate {
     
 }
 
+// MARK: - UITableViewDataSource
 extension ExistingEntriesViewController: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

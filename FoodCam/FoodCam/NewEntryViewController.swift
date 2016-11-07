@@ -23,6 +23,7 @@ class NewEntryViewController: UIViewController {
 
     func editMode(entry: FoodEntry) {
         self.entry = entry
+        self.title = "Edit Entry"
     }
     
     override func viewWillAppear(_ animated: Bool) {
