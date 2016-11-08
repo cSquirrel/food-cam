@@ -7,9 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		324DA3BF1DC953AE005EB950 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3BE1DC953AE005EB950 /* MobileCoreServices.framework */; };
+		324DA3C21DC95B9B005EB950 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C11DC95B9B005EB950 /* CloudKit.framework */; };
+		324DA3C41DCA014F005EB950 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C31DCA014F005EB950 /* RealmSwift.framework */; };
+		324DA3C71DCA0197005EB950 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C61DCA0197005EB950 /* Realm.framework */; };
+		324DA3C81DCA027E005EB950 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C61DCA0197005EB950 /* Realm.framework */; };
+		324DA3C91DCA027E005EB950 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C61DCA0197005EB950 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		324DA3CA1DCA027E005EB950 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C31DCA014F005EB950 /* RealmSwift.framework */; };
+		324DA3CB1DCA027E005EB950 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C31DCA014F005EB950 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		324DA3D21DCA0310005EB950 /* FoodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DA3D11DCA0310005EB950 /* FoodEntry.swift */; };
+		324DA3D41DCA03BC005EB950 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DA3D31DCA03BC005EB950 /* DataSource.swift */; };
+		325754201DCB927600FF0935 /* NewEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3257541E1DCB927600FF0935 /* NewEntryViewController.swift */; };
+		32CA18031DCBE85C008A337A /* ExistingEntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA18011DCBE85C008A337A /* ExistingEntriesViewController.swift */; };
+		32CA18071DCBEB96008A337A /* EntryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CA18051DCBEB96008A337A /* EntryDetailsViewController.swift */; };
 		32CD34661DC8FDCB000501B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD34651DC8FDCB000501B6 /* AppDelegate.swift */; };
-		32CD34681DC8FDCB000501B6 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD34671DC8FDCB000501B6 /* FirstViewController.swift */; };
-		32CD346A1DC8FDCB000501B6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD34691DC8FDCB000501B6 /* SecondViewController.swift */; };
 		32CD346D1DC8FDCB000501B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32CD346B1DC8FDCB000501B6 /* Main.storyboard */; };
 		32CD346F1DC8FDCB000501B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32CD346E1DC8FDCB000501B6 /* Assets.xcassets */; };
 		32CD34721DC8FDCB000501B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32CD34701DC8FDCB000501B6 /* LaunchScreen.storyboard */; };
@@ -34,11 +45,34 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		324DA3CC1DCA027E005EB950 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				324DA3CB1DCA027E005EB950 /* RealmSwift.framework in Embed Frameworks */,
+				324DA3C91DCA027E005EB950 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		324DA3BE1DC953AE005EB950 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		324DA3C01DC95B98005EB950 /* FoodCam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodCam.entitlements; sourceTree = "<group>"; };
+		324DA3C11DC95B9B005EB950 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		324DA3C31DCA014F005EB950 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		324DA3C61DCA0197005EB950 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		324DA3D11DCA0310005EB950 /* FoodEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodEntry.swift; sourceTree = "<group>"; };
+		324DA3D31DCA03BC005EB950 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		3257541E1DCB927600FF0935 /* NewEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEntryViewController.swift; sourceTree = "<group>"; };
+		32CA18011DCBE85C008A337A /* ExistingEntriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingEntriesViewController.swift; sourceTree = "<group>"; };
+		32CA18051DCBEB96008A337A /* EntryDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryDetailsViewController.swift; sourceTree = "<group>"; };
 		32CD34621DC8FDCB000501B6 /* FoodCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32CD34651DC8FDCB000501B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		32CD34671DC8FDCB000501B6 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		32CD34691DC8FDCB000501B6 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		32CD346C1DC8FDCB000501B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32CD346E1DC8FDCB000501B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32CD34711DC8FDCB000501B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +90,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				324DA3C71DCA0197005EB950 /* Realm.framework in Frameworks */,
+				324DA3BF1DC953AE005EB950 /* MobileCoreServices.framework in Frameworks */,
+				324DA3CA1DCA027E005EB950 /* RealmSwift.framework in Frameworks */,
+				324DA3C21DC95B9B005EB950 /* CloudKit.framework in Frameworks */,
+				324DA3C41DCA014F005EB950 /* RealmSwift.framework in Frameworks */,
+				324DA3C81DCA027E005EB950 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +116,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		324DA3BD1DC953AE005EB950 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				324DA3C61DCA0197005EB950 /* Realm.framework */,
+				324DA3C31DCA014F005EB950 /* RealmSwift.framework */,
+				324DA3C11DC95B9B005EB950 /* CloudKit.framework */,
+				324DA3BE1DC953AE005EB950 /* MobileCoreServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		324DA3D01DCA02FF005EB950 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				324DA3D11DCA0310005EB950 /* FoodEntry.swift */,
+				324DA3D31DCA03BC005EB950 /* DataSource.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		32CD34591DC8FDCB000501B6 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +143,7 @@
 				32CD347B1DC8FDCB000501B6 /* FoodCamTests */,
 				32CD34861DC8FDCB000501B6 /* FoodCamUITests */,
 				32CD34631DC8FDCB000501B6 /* Products */,
+				324DA3BD1DC953AE005EB950 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +160,16 @@
 		32CD34641DC8FDCB000501B6 /* FoodCam */ = {
 			isa = PBXGroup;
 			children = (
+				324DA3D01DCA02FF005EB950 /* Model */,
+				324DA3C01DC95B98005EB950 /* FoodCam.entitlements */,
 				32CD34651DC8FDCB000501B6 /* AppDelegate.swift */,
-				32CD34671DC8FDCB000501B6 /* FirstViewController.swift */,
-				32CD34691DC8FDCB000501B6 /* SecondViewController.swift */,
 				32CD346B1DC8FDCB000501B6 /* Main.storyboard */,
 				32CD346E1DC8FDCB000501B6 /* Assets.xcassets */,
 				32CD34701DC8FDCB000501B6 /* LaunchScreen.storyboard */,
 				32CD34731DC8FDCB000501B6 /* Info.plist */,
+				3257541E1DCB927600FF0935 /* NewEntryViewController.swift */,
+				32CA18011DCBE85C008A337A /* ExistingEntriesViewController.swift */,
+				32CA18051DCBEB96008A337A /* EntryDetailsViewController.swift */,
 			);
 			path = FoodCam;
 			sourceTree = "<group>";
@@ -138,6 +202,8 @@
 				32CD345E1DC8FDCB000501B6 /* Sources */,
 				32CD345F1DC8FDCB000501B6 /* Frameworks */,
 				32CD34601DC8FDCB000501B6 /* Resources */,
+				324DA3CC1DCA027E005EB950 /* Embed Frameworks */,
+				324DA3CD1DCA0295005EB950 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -198,6 +264,14 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = FXYZH4KYS4;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					32CD34771DC8FDCB000501B6 = {
 						CreatedOnToolsVersion = 8.1;
@@ -260,14 +334,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		324DA3CD1DCA0295005EB950 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${SOURCE_ROOT}/Realm.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		32CD345E1DC8FDCB000501B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32CD346A1DC8FDCB000501B6 /* SecondViewController.swift in Sources */,
+				32CA18031DCBE85C008A337A /* ExistingEntriesViewController.swift in Sources */,
+				324DA3D21DCA0310005EB950 /* FoodEntry.swift in Sources */,
 				32CD34661DC8FDCB000501B6 /* AppDelegate.swift in Sources */,
-				32CD34681DC8FDCB000501B6 /* FirstViewController.swift in Sources */,
+				32CA18071DCBEB96008A337A /* EntryDetailsViewController.swift in Sources */,
+				324DA3D41DCA03BC005EB950 /* DataSource.swift in Sources */,
+				325754201DCB927600FF0935 /* NewEntryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +512,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FoodCam/FoodCam.entitlements;
 				DEVELOPMENT_TEAM = FXYZH4KYS4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FoodCam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.csquirrel.FoodCam;
@@ -432,7 +530,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FoodCam/FoodCam.entitlements;
 				DEVELOPMENT_TEAM = FXYZH4KYS4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FoodCam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.csquirrel.FoodCam;
@@ -518,6 +621,7 @@
 				32CD348E1DC8FDCB000501B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		32CD348F1DC8FDCB000501B6 /* Build configuration list for PBXNativeTarget "FoodCamTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +630,7 @@
 				32CD34911DC8FDCB000501B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		32CD34921DC8FDCB000501B6 /* Build configuration list for PBXNativeTarget "FoodCamUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +639,7 @@
 				32CD34941DC8FDCB000501B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
