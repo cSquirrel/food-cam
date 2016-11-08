@@ -10,7 +10,7 @@ import UIKit
 
 class ExistingEntriesViewController: UIViewController {
 
-    fileprivate var entries:[FoodEntry]? = nil
+    fileprivate var dailyEntries:[DailyEntries]? = nil
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,7 +30,7 @@ class ExistingEntriesViewController: UIViewController {
     }
     
     @IBAction func doRefresh(_ sender: Any) {
-        entries = DataSource().findAllFoodEntries()
+        dailyEntries = DataSource().findAllFoodEntries()
         tableView.reloadData()
     }
     
@@ -55,10 +55,11 @@ class ExistingEntriesViewController: UIViewController {
 extension ExistingEntriesViewController: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let entry = entries?[indexPath.row] else {
+        guard let day = dailyEntries?[indexPath.section] else {
             return
         }
         
+        let entry = day.entries[indexPath.row]
         if let detailsVC = self.storyboard?.instantiateViewController(withIdentifier: "addEntry") as? NewEntryViewController {
             detailsVC.editMode(entry: entry)
             navigationController?.pushViewController(detailsVC, animated: true)
@@ -70,13 +71,39 @@ extension ExistingEntriesViewController: UITableViewDelegate {
 // MARK: - UITableViewDataSource
 extension ExistingEntriesViewController: UITableViewDataSource {
 
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        guard let e = entries else {
-            return 0
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        guard let e = dailyEntries else {
+            return 1
         }
         
         return e.count
+    }
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        guard let de = dailyEntries else {
+            return 0
+        }
+        
+        let e = de[section].entries
+        return e.count
+    }
+    
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        guard let e = dailyEntries else {
+            return nil
+        }
+        
+        let result:String?
+        
+        let date = e[section].date
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        result = dateFormatter.string(from: date)
+        
+        return result
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -87,9 +114,11 @@ extension ExistingEntriesViewController: UITableViewDataSource {
             result = UITableViewCell(style: .default, reuseIdentifier: cellID)
         }
         
-        if let entry = entries?[indexPath.row] {
+        if let day = dailyEntries?[indexPath.section] {
+            let entry = day.entries[indexPath.row]
             result?.textLabel?.text = "\(entry.createdAt)"
         }
+        
         
         return result!
         

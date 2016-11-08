@@ -10,14 +10,77 @@ import UIKit
 import RealmSwift
 import CloudKit
 
+struct DailyEntries {
+    let date: Date
+    var entries: [FoodEntry] = []
+}
+
+/**
+ Unifies date/time to midnight
+ */
+internal func DayFromDate(date:Date) -> Date? {
+    
+    let result:Date?
+    
+    
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "YYYY/MM/dd"
+    let dateAsString = dateFormatter.string(from: date)
+    result = dateFormatter.date(from: dateAsString)
+    
+    return result
+}
+
 class DataSource: NSObject {
 
-    func findAllFoodEntries() -> [FoodEntry] {
-        let result = findAllFoodEntriesInRealm()
+    let realm: Realm
+    
+    override init() {
+        
+        realm = try! Realm()
+        let fileURL = realm.configuration.fileURL
+        print("fileURL: \(fileURL)")
+        
+        super.init()
+    }
+    
+    public func findAllFoodEntries() -> [DailyEntries] {
+        let allEntries = findAllFoodEntriesInRealm()
+        let result = groupFoodEntries(entries: allEntries)
         return result
     }
+    
+    internal func groupFoodEntries(entries:[FoodEntry]) -> [DailyEntries] {
+        var entriesByDay: [Date:DailyEntries] = [:]
+        
+        entries.forEach {
+            (foodEntry: FoodEntry) in
+            
+            guard let normalisedDate = DayFromDate(date: foodEntry.createdAt) else {
+                return
+            }
+            
+            let theDay = normalisedDate
+            var entriesOnTheDay: DailyEntries
+            if let e = entriesByDay[theDay] {
+                entriesOnTheDay = e
+            } else {
+                entriesOnTheDay = DailyEntries(date: theDay, entries: [])
+            }
+            entriesOnTheDay.entries.append(foodEntry)
+            entriesByDay[theDay] = entriesOnTheDay
+        }
+        
+        let result:[DailyEntries] = entriesByDay.values.sorted {
+            (entry1: DailyEntries, entry2: DailyEntries) -> Bool in
+            let result = (entry1.date.compare(entry2.date) == .orderedDescending)
+            return result
+        }
+        return result
 
-    func save(foodEntry: FoodEntry) {
+    }
+
+    public func save(foodEntry: FoodEntry) {
 
         do {
 
@@ -38,10 +101,6 @@ class DataSource: NSObject {
 extension DataSource {
 
     fileprivate func saveInRealm(foodEntry: FoodEntry) throws {
-
-        let realm = try! Realm()
-        let fileURL = realm.configuration.fileURL
-        print("fileURL: \(fileURL)")
 
         try realm.write {
             realm.add(foodEntry)
@@ -93,7 +152,7 @@ extension DataSource {
         }
 
         foodEntryRecord["customDescription"] = foodEntry.customDescription as NSString?
-        foodEntryRecord["createdAt"] = foodEntry.createdAt
+        foodEntryRecord["createdAt"] = foodEntry.createdAt as CKRecordValue?
         let saveRecord = CKModifyRecordsOperation(recordsToSave: [foodEntryRecord], recordIDsToDelete: nil)
         saveRecord.modifyRecordsCompletionBlock = {
             (records: [CKRecord]?, recordIDs: [CKRecordID]?, error: Error?) in

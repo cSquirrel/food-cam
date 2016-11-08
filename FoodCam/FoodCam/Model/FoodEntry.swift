@@ -11,10 +11,10 @@ import RealmSwift
 
 class FoodEntry: Object {
 
-    dynamic var id: String = "\(NSDate().timeIntervalSince1970)"
+    dynamic var id: String = "\(Date().timeIntervalSince1970)"
     dynamic var imageData: NSData?
     dynamic var customDescription: String?
-    dynamic var createdAt = NSDate()
+    dynamic var createdAt = Date()
 
     var image: UIImage? {
 
