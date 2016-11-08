@@ -10,7 +10,7 @@ import UIKit
 
 class ExistingEntriesViewController: UIViewController {
 
-    fileprivate var entries:[FoodEntry]? = nil
+    fileprivate var entries:[DailyEntries]? = nil
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -55,10 +55,11 @@ class ExistingEntriesViewController: UIViewController {
 extension ExistingEntriesViewController: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let entry = entries?[indexPath.row] else {
+        guard let day = entries?[indexPath.section] else {
             return
         }
         
+        let entry = day.entries[indexPath.row]
         if let detailsVC = self.storyboard?.instantiateViewController(withIdentifier: "addEntry") as? NewEntryViewController {
             detailsVC.editMode(entry: entry)
             navigationController?.pushViewController(detailsVC, animated: true)
@@ -87,9 +88,11 @@ extension ExistingEntriesViewController: UITableViewDataSource {
             result = UITableViewCell(style: .default, reuseIdentifier: cellID)
         }
         
-        if let entry = entries?[indexPath.row] {
+        if let day = entries?[indexPath.section] {
+            let entry = day.entries[indexPath.row]
             result?.textLabel?.text = "\(entry.createdAt)"
         }
+        
         
         return result!
         

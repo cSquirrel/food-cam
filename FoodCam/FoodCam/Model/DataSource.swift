@@ -10,11 +10,39 @@ import UIKit
 import RealmSwift
 import CloudKit
 
+struct DailyEntries {
+    let date: NSDate
+    let entries: [FoodEntry]
+}
+
 class DataSource: NSObject {
 
-    func findAllFoodEntries() -> [FoodEntry] {
-        let result = findAllFoodEntriesInRealm()
+    public func findAllFoodEntries() -> [DailyEntries] {
+        let allEntries = findAllFoodEntriesInRealm()
+        
+        var entriesByDay: [NSDate:[FoodEntry]] = [:]
+        
+        allEntries.forEach {
+            (foodEntry: FoodEntry) in
+            
+            let theDay = NSDate()
+            
+            var entriesOnTheDay: [FoodEntry]
+            if let e = entriesByDay[theDay] {
+                entriesOnTheDay = e
+            } else {
+                entriesOnTheDay = []
+            }
+            entriesOnTheDay.append(foodEntry)
+            entriesByDay[theDay] = entriesOnTheDay
+        }
+        
+        let result:[DailyEntries] = []
         return result
+    }
+    
+    func groupFoodEntries(entries:[FoodEntry]) -> [DailyEntries] {
+        return []
     }
 
     func save(foodEntry: FoodEntry) {
@@ -93,7 +121,7 @@ extension DataSource {
         }
 
         foodEntryRecord["customDescription"] = foodEntry.customDescription as NSString?
-        foodEntryRecord["createdAt"] = foodEntry.createdAt
+        foodEntryRecord["createdAt"] = foodEntry.createdAt as CKRecordValue?
         let saveRecord = CKModifyRecordsOperation(recordsToSave: [foodEntryRecord], recordIDsToDelete: nil)
         saveRecord.modifyRecordsCompletionBlock = {
             (records: [CKRecord]?, recordIDs: [CKRecordID]?, error: Error?) in

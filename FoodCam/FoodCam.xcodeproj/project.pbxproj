@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32028DCD1DD1B623006E12B6 /* DataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32028DCC1DD1B623006E12B6 /* DataSourceTests.swift */; };
+		32028DCE1DD1B8B2006E12B6 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C61DCA0197005EB950 /* Realm.framework */; };
+		32028DCF1DD1B8B2006E12B6 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C31DCA014F005EB950 /* RealmSwift.framework */; };
+		32028DD01DD1B8B2006E12B6 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C11DC95B9B005EB950 /* CloudKit.framework */; };
+		32028DD11DD1B8B2006E12B6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3BE1DC953AE005EB950 /* MobileCoreServices.framework */; };
 		324DA3BF1DC953AE005EB950 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3BE1DC953AE005EB950 /* MobileCoreServices.framework */; };
 		324DA3C21DC95B9B005EB950 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C11DC95B9B005EB950 /* CloudKit.framework */; };
-		324DA3C41DCA014F005EB950 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C31DCA014F005EB950 /* RealmSwift.framework */; };
 		324DA3C71DCA0197005EB950 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C61DCA0197005EB950 /* Realm.framework */; };
-		324DA3C81DCA027E005EB950 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C61DCA0197005EB950 /* Realm.framework */; };
 		324DA3C91DCA027E005EB950 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C61DCA0197005EB950 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		324DA3CA1DCA027E005EB950 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C31DCA014F005EB950 /* RealmSwift.framework */; };
 		324DA3CB1DCA027E005EB950 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 324DA3C31DCA014F005EB950 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -61,6 +64,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		32028DCC1DD1B623006E12B6 /* DataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceTests.swift; sourceTree = "<group>"; };
 		324DA3BE1DC953AE005EB950 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		324DA3C01DC95B98005EB950 /* FoodCam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodCam.entitlements; sourceTree = "<group>"; };
 		324DA3C11DC95B9B005EB950 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -94,8 +98,6 @@
 				324DA3BF1DC953AE005EB950 /* MobileCoreServices.framework in Frameworks */,
 				324DA3CA1DCA027E005EB950 /* RealmSwift.framework in Frameworks */,
 				324DA3C21DC95B9B005EB950 /* CloudKit.framework in Frameworks */,
-				324DA3C41DCA014F005EB950 /* RealmSwift.framework in Frameworks */,
-				324DA3C81DCA027E005EB950 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +105,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32028DCE1DD1B8B2006E12B6 /* Realm.framework in Frameworks */,
+				32028DCF1DD1B8B2006E12B6 /* RealmSwift.framework in Frameworks */,
+				32028DD01DD1B8B2006E12B6 /* CloudKit.framework in Frameworks */,
+				32028DD11DD1B8B2006E12B6 /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +185,7 @@
 			children = (
 				32CD347C1DC8FDCB000501B6 /* FoodCamTests.swift */,
 				32CD347E1DC8FDCB000501B6 /* Info.plist */,
+				32028DCC1DD1B623006E12B6 /* DataSourceTests.swift */,
 			);
 			path = FoodCamTests;
 			sourceTree = "<group>";
@@ -368,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32028DCD1DD1B623006E12B6 /* DataSourceTests.swift in Sources */,
 				32CD347D1DC8FDCB000501B6 /* FoodCamTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,6 +558,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = FXYZH4KYS4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FoodCamTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.csquirrel.FoodCamTests;
@@ -565,6 +577,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = FXYZH4KYS4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FoodCamTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.csquirrel.FoodCamTests;
