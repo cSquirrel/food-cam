@@ -21,6 +21,24 @@ class DataSourceTests: XCTestCase {
         super.tearDown()
     }
     
+    func testDayFromDate() {
+        
+        // prepare
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        let testDate = dateFormatter.date(from: "2000/05/10 12:24:54")!
+        print(dateFormatter.string(from: testDate))
+        
+        // execute
+        let result = DayFromDate(date: testDate)
+        
+        // verify
+        XCTAssertNotNil(result)
+        let formattedResult = dateFormatter.string(from: result!)
+        XCTAssertEqual(formattedResult, "2000/05/10 00:00:00")
+        
+    }
+    
     func testGroupFoodEntries() {
         
         // prepare
