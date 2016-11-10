@@ -95,6 +95,19 @@ class DataSource: NSObject {
 
     }
 
+    public func delete(foodEntry: FoodEntry) throws {
+        
+        do {
+            
+            try deleteFromRealm(foodEntry: foodEntry)
+            
+            // CloudKit not in use at the moment
+            deleteFromCloudKit(foodEntry: foodEntry)
+            
+        } catch let error as NSError {
+            print(error)
+        }
+    }
 }
 
 // MARK: - Realm DB
@@ -109,12 +122,18 @@ extension DataSource {
 
     fileprivate func findAllFoodEntriesInRealm() -> [FoodEntry] {
 
-        let realm = try! Realm()
         let entries: Results<FoodEntry> = realm.objects(FoodEntry.self).sorted(byProperty: "createdAt", ascending: false)
         let result = Array(entries)
 
         return result
 
+    }
+    
+    fileprivate func deleteFromRealm(foodEntry: FoodEntry) throws {
+        
+        try realm.write {
+            realm.delete(foodEntry)
+        }
     }
 }
 
@@ -160,6 +179,9 @@ extension DataSource {
         }
         privateDB.add(saveRecord)
 
+    }
+    
+    fileprivate func deleteFromCloudKit(foodEntry: FoodEntry) {
     }
 
     // --
