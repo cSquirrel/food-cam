@@ -8,11 +8,9 @@
 
 import UIKit
 
-class ExistingEntriesViewController: UIViewController {
+class ExistingEntriesViewController: UITableViewController {
 
     fileprivate var dailyEntries:[DailyEntries]? = nil
-    
-    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +36,9 @@ class ExistingEntriesViewController: UIViewController {
         print("doEditEntry")
     }
     
+    @IBAction func doSwipe(_ sender: Any) {
+        print("doSwipe")
+    }
 
     /*
     // MARK: - Navigation
@@ -52,9 +53,21 @@ class ExistingEntriesViewController: UIViewController {
 }
 
 // MARK: - UITableViewDelegate
-extension ExistingEntriesViewController: UITableViewDelegate {
+extension ExistingEntriesViewController {
     
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//    public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        guard let day = dailyEntries?[indexPath.section] else {
+//            return
+//        }
+//        
+////        let entry = day.entries[indexPath.row]
+////        if let detailsVC = self.storyboard?.instantiateViewController(withIdentifier: "addEntry") as? NewEntryViewController {
+////            detailsVC.editMode(entry: entry)
+////            navigationController?.pushViewController(detailsVC, animated: true)
+////        }
+//    }
+    
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         guard let day = dailyEntries?[indexPath.section] else {
             return
         }
@@ -64,14 +77,33 @@ extension ExistingEntriesViewController: UITableViewDelegate {
             detailsVC.editMode(entry: entry)
             navigationController?.pushViewController(detailsVC, animated: true)
         }
+
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true;
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if let day = dailyEntries?[indexPath.section] {
+                let entry = day.entries[indexPath.row]
+                do {
+                    try DataSource().delete(foodEntry: entry)
+                    dailyEntries = DataSource().findAllFoodEntries()
+                    tableView.deleteRows(at: [indexPath], with: .automatic)
+                } catch let error as NSError {
+                    print(error)
+                }
+            }
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
-extension ExistingEntriesViewController: UITableViewDataSource {
+extension ExistingEntriesViewController {
 
-    public func numberOfSections(in tableView: UITableView) -> Int {
+    public override func numberOfSections(in tableView: UITableView) -> Int {
         guard let e = dailyEntries else {
             return 1
         }
@@ -79,7 +111,7 @@ extension ExistingEntriesViewController: UITableViewDataSource {
         return e.count
     }
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         guard let de = dailyEntries else {
             return 0
@@ -89,7 +121,7 @@ extension ExistingEntriesViewController: UITableViewDataSource {
         return e.count
     }
     
-    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    public override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         guard let e = dailyEntries else {
             return nil
@@ -106,13 +138,13 @@ extension ExistingEntriesViewController: UITableViewDataSource {
         return result
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellID = "EntryDetails"
-        var result = tableView.dequeueReusableCell(withIdentifier: cellID)
-        if (result == nil) {
-            result = UITableViewCell(style: .default, reuseIdentifier: cellID)
-        }
+        let result = tableView.dequeueReusableCell(withIdentifier: cellID)
+//        if (result == nil) {
+//            result = UITableViewCell(style: .default, reuseIdentifier: cellID)
+//        }
         
         if let day = dailyEntries?[indexPath.section] {
             let entry = day.entries[indexPath.row]
