@@ -1,0 +1,10 @@
+//
+//  FoodCam-Release.xcconfig
+//  FoodCam
+//
+//  Created by Marcin Maciukiewicz on 15/11/2016.
+//  Copyright © 2016 Marcin Maciukiewicz. All rights reserved.
+//
+
+BUNDLE_IDENTIFIER = com.csquirrel.FoodCam
+VERSION_NUMBER = 1.0
